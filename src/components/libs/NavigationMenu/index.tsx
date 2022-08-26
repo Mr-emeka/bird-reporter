@@ -15,8 +15,8 @@ const NavigationMenu: FC<NavigationMenuProps> = ({name}) => {
       <HamburgerIcon/>
     </div>
     <nav data-testid={"bird-nav-items"}>
-      <Avatar name={"John Doe"}/>
-      <h5>John Doe</h5>
+      <Avatar name={name}/>
+      <h5>{name}</h5>
     </nav>
   </NavigationMenuStyle>
 }

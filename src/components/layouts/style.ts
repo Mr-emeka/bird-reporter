@@ -35,7 +35,7 @@ export const Frame = styled.div`
       font-style: normal;
       font-weight: 700;
       /* identical to box height */
-
+      margin-top: 27px;
 
       color: ${props => props.theme.colors.purple};
     }

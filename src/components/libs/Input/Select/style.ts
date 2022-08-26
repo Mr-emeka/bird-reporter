@@ -1,6 +1,5 @@
 import {ReactElement} from "react";
 import styled from "styled-components";
-import {device} from "../../../../helpers/breakpoints";
 
 export interface OptionProp {
   value: string;
@@ -59,7 +58,4 @@ export const SelectStyle = styled.div`
 
   /* Inside Auto Layout */
   margin: 0.375rem 0;
-  // @media ${device.tablet} {
-  //   min-width: 100%;
-  // }
 `;

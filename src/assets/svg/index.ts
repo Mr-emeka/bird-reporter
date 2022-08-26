@@ -1,1 +1,1 @@
-export {ReactComponent as NoReport} from "./no-report.svg";
+export {ReactComponent as NoReportSVG} from "./no-report.svg";
