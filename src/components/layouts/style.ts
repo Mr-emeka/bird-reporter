@@ -17,6 +17,8 @@ export const Frame = styled.div`
       & > svg {
         margin-bottom: 1.313rem;
         cursor: pointer;
+        width: 24.88px;
+        height: 24.88px;
       }
     }
   }

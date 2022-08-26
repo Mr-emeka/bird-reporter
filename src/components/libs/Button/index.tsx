@@ -1,5 +1,6 @@
 import {ButtonProps, ButtonStyle} from "./style";
 import {FC} from "react";
+import {withTheme} from "../../../hoc/withTheme";
 
 const Button: FC<ButtonProps> = (props) => {
   return <ButtonStyle {...props}>
@@ -8,4 +9,4 @@ const Button: FC<ButtonProps> = (props) => {
 }
 
 
-export default Button;
+export default withTheme<ButtonProps>(Button);

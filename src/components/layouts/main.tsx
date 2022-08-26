@@ -5,6 +5,8 @@ import {DashboardIcon, GraphIcon, HomeIcon, LogOffIcon, PcIcon} from "../../asse
 import {useDispatch, useSelector} from "react-redux";
 import {getUserAsync} from "../../redux/modules/user/actions";
 import {RootState} from "../../redux";
+import { withProvider } from "../../hoc/withProvider";
+import { withTheme } from "../../hoc/withTheme";
 
 interface LayoutProps {
   [key: string]: any;
@@ -24,7 +26,7 @@ const MainDashboardLayout: FC<LayoutProps> = ({type, children, ...props}) => {
       <NavigationMenu name={`${data.firstName} ${data.lastName}`}/>
       <Frame>
         <aside>
-          <div>
+          <div data-testid={'aside-icon-container'}>
             <HomeIcon/>
             <DashboardIcon/>
             <GraphIcon/>
@@ -32,7 +34,7 @@ const MainDashboardLayout: FC<LayoutProps> = ({type, children, ...props}) => {
             <LogOffIcon/>
           </div>
         </aside>
-        <main>
+        <main data-testid={"main"}>
           {children}
           <h6>Terms&Conditions | Privacy policy</h6>
         </main>
@@ -40,4 +42,4 @@ const MainDashboardLayout: FC<LayoutProps> = ({type, children, ...props}) => {
     </Fragment>
   );
 };
-export default MainDashboardLayout;
+export default withProvider(withTheme(MainDashboardLayout));

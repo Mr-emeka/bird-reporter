@@ -1,6 +1,7 @@
 import {FC} from "react";
 import {SelectProps, SelectStyle} from "./style";
 import {ArrowDownIcon} from "../../../../assets/icons";
+import {withTheme} from "../../../../hoc/withTheme";
 
 const Select: FC<SelectProps> = ({
                                    name,
@@ -24,4 +25,4 @@ const Select: FC<SelectProps> = ({
   </SelectStyle>
 }
 
-export default Select;
+export default withTheme<SelectProps>(Select);

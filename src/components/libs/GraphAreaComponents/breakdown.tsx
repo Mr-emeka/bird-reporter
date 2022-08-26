@@ -10,7 +10,7 @@ const Breakdown: FC<BreakdownProps> = ({data}) => {
     {data.map(({value, color}, index) => {
       return <Fragment key={index + 1}>
         <Span color={color} />
-        <li >{value}</li>
+        <li>{value}</li>
       </Fragment>
     })}
   </BreakdownStyle>

@@ -1,5 +1,6 @@
 import {TotalCardStyle} from "./style";
 import {FC} from "react";
+import {withTheme} from "../../../hoc/withTheme";
 
 
 interface TotalCardProps {
@@ -7,11 +8,11 @@ interface TotalCardProps {
   amount: string
 }
 
-const TotalCard: FC<TotalCardProps> = ({text = "GATEWAY TOTAL", amount = "4,000 USD"}) => {
-  return <TotalCardStyle>
-    <h3>{text} | {amount}</h3>
+const TotalCard: FC<TotalCardProps> = ({text, amount }) => {
+  return <TotalCardStyle data-testid={"total-card"}>
+    <h3 data-testid={'h3-text'}>{text} | {amount}</h3>
   </TotalCardStyle>
 }
 
 
-export default TotalCard;
+export default withTheme<TotalCardProps>(TotalCard);

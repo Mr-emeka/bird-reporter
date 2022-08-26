@@ -16,6 +16,8 @@ import {GenerateReportDataProps} from "../../../../services/ReportService";
 import NoReport from "./NoReport";
 import {dashboardTableCol} from "../../../libs/Table/data";
 import {selectedGateway, selectedProject} from "../../../../helpers";
+import { withProvider } from "../../../../hoc/withProvider";
+import {withTheme} from "../../../../hoc/withTheme";
 
 const Dashboard = () => {
   const dispatch = useDispatch<any>();
@@ -131,4 +133,4 @@ const Dashboard = () => {
 }
 
 
-export default Dashboard;
+export default withProvider(withTheme(Dashboard));
