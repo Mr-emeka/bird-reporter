@@ -19,7 +19,6 @@ export function getProjectsAsync() {
     try {
       dispatch(getProjects(true));
       const {data: responseData} = await reportService.getProjects();
-      console.log(responseData)
       dispatch(getProjectsSuccess(responseData));
     } catch (e) {
       const httpError = e as HttpError;
@@ -60,7 +59,6 @@ export function getGatewaysAsync() {
     try {
       dispatch(getGateways(true));
       const {data: responseData} = await reportService.getGateways();
-      console.log(responseData)
       dispatch(getGatewaysSuccess(responseData));
     } catch (e) {
       const httpError = e as HttpError;

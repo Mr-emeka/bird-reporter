@@ -16,7 +16,7 @@ import {GenerateReportDataProps} from "../../../../services/ReportService";
 import NoReport from "./NoReport";
 import {dashboardTableCol} from "../../../libs/Table/data";
 import {selectedGateway, selectedProject} from "../../../../helpers";
-import { withProvider } from "../../../../hoc/withProvider";
+import {withProvider} from "../../../../hoc/withProvider";
 import {withTheme} from "../../../../hoc/withTheme";
 
 const Dashboard = () => {
@@ -29,7 +29,6 @@ const Dashboard = () => {
     dispatch(getProjectsAsync())
     //eslint-disable-next-line
   }, [])
-
   useEffect(() => {
     dispatch(getGatewaysAsync())
     //eslint-disable-next-line
@@ -102,8 +101,14 @@ const Dashboard = () => {
                       dataSource={
                         reports.filter(report => {
                           return report.projectId.includes(project.projectId) || report.gatewayId.includes(value.gatewayId)
-                        }).map((report, index) => {
-                          return {key: index, ...report}
+                        }).sort((a, b) =>  new Date(a.created).getTime() - new Date(b.created).getTime()).map((report, index) => {
+                          return {
+                            key: index,
+                            gateway: report.gatewayId,
+                            created: new Date(report.created).toLocaleDateString().replaceAll('/', '.'),
+                            paymentId: report.paymentId,
+                            amount: report.amount
+                          }
                         })}
                       evenStyled={true}/>
                   </>
